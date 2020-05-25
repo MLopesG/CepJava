@@ -43,7 +43,6 @@ public class SearchCep
         return rua;
     }
 
-    // Properties
     public void setRua(String rua) {
         this.rua = rua;
     }
@@ -64,7 +63,7 @@ public class SearchCep
     {
         try 
         {
-            URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep + "&formato=xml");
+            URL url = new URL("https://viacep.com.br/ws/"+cep+"/xml/");
 
             Document document = getDocumento(url);
 
@@ -85,7 +84,7 @@ public class SearchCep
         } 
         catch (Exception e) 
         {
-            e.printStackTrace();
+            System.out.println(e.toSting());
         }
     }
 
